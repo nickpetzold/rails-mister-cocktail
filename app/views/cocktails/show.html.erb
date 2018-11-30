@@ -11,6 +11,7 @@
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
       <%= f.input :description %>
+
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>
