@@ -1,0 +1,20 @@
+<div class="container">
+  <h1><%= @cocktail.name %></h1>
+  <p>Ingredients:</p>
+  <ul>
+    <% @cocktail.doses.each do |dose| %>
+      <li><%= dose.to_s %> - <%= link_to '🗑', dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></li>
+    <% end %>
+  </ul>
+
+  <div class="container-add-ingredient">
+    <%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
+      <%= f.input :description %>
+      <%= f.submit class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+  <div class="mt-4">
+    <%= link_to "See all cocktails", cocktails_path %>
+  </div>
+</div>

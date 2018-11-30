@@ -5,4 +5,8 @@ class Dose < ApplicationRecord
   validates :ingredient_id, uniqueness: { scope: :cocktail_id }
   belongs_to :ingredient
   belongs_to :cocktail
+
+  def to_s
+    "#{Ingredient.find(ingredient_id).name} - #{description}"
+  end
 end
