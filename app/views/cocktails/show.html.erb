@@ -1,5 +1,6 @@
 <div class="container">
-  <h1><%= @cocktail.name %></h1>
+  <h1 class="title"><%= @cocktail.name %></h1>
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
   <p>Ingredients:</p>
   <ul>
     <% @cocktail.doses.each do |dose| %>
@@ -11,7 +12,6 @@
     <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.association :ingredient, collection: Ingredient.order('name ASC') %>
       <%= f.input :description %>
-
       <%= f.submit class: 'btn btn-primary' %>
     <% end %>
   </div>

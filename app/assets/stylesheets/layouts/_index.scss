@@ -3,3 +3,32 @@
 // @import "dashboard";
 // @import "profile";
 // @import "map";
+h1, h2, h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 64px;
+  color: white;
+}
+
+.container-title {
+  height: 100vh;
+}
+
+.welcome-text {
+  height: 80vh;
+  h2 {
+    color: white;
+    text-align: center;
+    padding-top: 175px;
+  }
+}
+
+
+.background-wrapper {
+  background-image: url('bar-background');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 1vh;
+}
